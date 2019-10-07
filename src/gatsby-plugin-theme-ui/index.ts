@@ -1,9 +1,10 @@
-import baseTheme from 'gatsby-theme-monolith/src/gatsby-plugin-theme-ui'
-import merge from 'deepmerge'
+import baseTheme from 'gatsby-theme-monolith/src/gatsby-plugin-theme-ui';
+import merge from 'deepmerge';
 
 export default merge(baseTheme, {
-  colors: {
-    text: '#222',
-    primary: 'tomato',
-  },
-})
+    colors: {
+        text: '#222',
+        primary: 'tomato',
+        yeh: true,
+    },
+});
