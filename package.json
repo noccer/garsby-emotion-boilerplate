@@ -35,6 +35,7 @@
     "@storybook/addons": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "@types/storybook__react": "^4.0.2",
+    "@types/tinycolor2": "^1.4.2",
     "prettier": "^1.18.2",
     "typescript": "^3.6.3"
   },
@@ -45,6 +46,7 @@
     "gatsby-theme-monolith": "^1.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "monolith-ui-components": "^1.0.0"
+    "monolith-ui-components": "^1.0.0",
+    "tinycolor2": "^1.4.1"
   }
 }
