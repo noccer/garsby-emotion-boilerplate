@@ -1,52 +1,52 @@
 {
-  "name": "gatsby-starter-monolith",
-  "description": "A starter site for Gatsby Monolith",
-  "private": true,
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Dan Spratling <dan.spratling@truedigital.co.uk>",
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{ts,tsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "storybook": "start-storybook -p 6006 NODE_ENV=production",
-    "build-storybook": "build-storybook",
-    "validate": "node ./node_modules/typescript/bin/tsc --pretty --watch --noEmit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
+    "name": "gatsby-starter-monolith",
+    "description": "A starter site for Gatsby Monolith",
+    "private": true,
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Dan Spratling <dan.spratling@truedigital.co.uk>",
+    "license": "MIT",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write src/**/*.{ts,tsx}",
+        "start": "npm run develop",
+        "serve": "gatsby serve",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+        "storybook": "start-storybook -p 6006 NODE_ENV=production",
+        "build-storybook": "build-storybook",
+        "validate": "node ./node_modules/typescript/bin/tsc --pretty --watch --noEmit"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "browserslist": [
+        ">0.25%",
+        "last 3 version",
+        "not dead"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@storybook/addon-actions": "^5.1.11",
+        "@storybook/addon-info": "^5.1.11",
+        "@storybook/addon-links": "^5.1.11",
+        "@storybook/addons": "^5.1.11",
+        "@storybook/react": "^5.1.11",
+        "@types/storybook__react": "^4.0.2",
+        "@types/tinycolor2": "^1.4.2",
+        "prettier": "^1.18.2",
+        "typescript": "^3.6.3"
+    },
+    "dependencies": {
+        "babel-loader": "^8.0.6",
+        "gatsby": "^2.15.21",
+        "gatsby-plugin-typescript": "^2.1.0",
+        "gatsby-theme-monolith": "^1.0.0",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "monolith-ui-components": "^1.0.0",
+        "tinycolor2": "^1.4.1"
     }
-  },
-  "browserslist": [
-    ">0.25%",
-    "last 3 version",
-    "not dead"
-  ],
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@storybook/addon-actions": "^5.1.11",
-    "@storybook/addon-info": "^5.1.11",
-    "@storybook/addon-links": "^5.1.11",
-    "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11",
-    "@types/storybook__react": "^4.0.2",
-    "@types/tinycolor2": "^1.4.2",
-    "prettier": "^1.18.2",
-    "typescript": "^3.6.3"
-  },
-  "dependencies": {
-    "babel-loader": "^8.0.6",
-    "gatsby": "^2.15.21",
-    "gatsby-plugin-typescript": "^2.1.0",
-    "gatsby-theme-monolith": "^1.0.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "monolith-ui-components": "^1.0.0",
-    "tinycolor2": "^1.4.1"
-  }
 }
