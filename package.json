@@ -42,11 +42,12 @@
     "dependencies": {
         "babel-loader": "^8.0.6",
         "gatsby": "^2.15.21",
+        "gatsby-plugin-emotion": "^4.1.12",
         "gatsby-plugin-typescript": "^2.1.0",
         "gatsby-theme-monolith": "^1.0.0",
+        "monolith-ui-components": "^1.0.0",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
-        "monolith-ui-components": "^1.0.0",
         "tinycolor2": "^1.4.1"
     }
 }
