@@ -1,12 +1,22 @@
 import React from 'react'
-import { configure, addDecorator } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { jsx, ThemeProvider } from 'theme-ui'
-import theme from '../src/gatsby-plugin-theme-ui'
+import {
+  configure,
+  addDecorator
+} from '@storybook/react'
+import {
+  action
+} from '@storybook/addon-actions'
+import {
+  jsx,
+  ThemeProvider
+} from 'theme-ui'
+import {
+  lightTheme
+} from '../src/utils/theme'
 
-const customTheme = storyFn => (
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
-)
+// prettier-ignore
+const customTheme = storyFn => <ThemeProvider theme={lightTheme}>{storyFn()}</ThemeProvider>;
+
 addDecorator(customTheme)
 
 // Gatsby's Link overrides:
@@ -23,7 +33,7 @@ window.___navigate = pathname => {
 }
 
 // automatically import all files ending in *.stories.{js,jsx,ts,tsx}
-const req = require.context('../stories', true, /\.stories\.(ts|tsx)$/)
+const req = require.context('../src', true, /\.stories\.(ts|tsx)$/)
 
 function loadStories() {
   req.keys().forEach(filename => req(filename))
