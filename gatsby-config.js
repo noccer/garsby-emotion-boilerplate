@@ -3,5 +3,8 @@ require('dotenv').config({
 })
 
 module.exports = {
-    plugins: [`gatsby-theme-monolith`, `gatsby-plugin-typescript`],
+    plugins: [
+        `gatsby-plugin-emotion`,
+        `gatsby-plugin-typescript`
+    ],
 }
