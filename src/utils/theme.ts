@@ -1,23 +1,16 @@
-import { Theme, ThemeProviderProps } from '@storybook/theming';
-
 import merge from 'deepmerge';
-import { baseTheme } from './colourUtil';
+import { baseTheme, colourSets } from './colourUtil';
 
-export type StorybookTheme = Partial<Theme>;
+export type NiallTheme = typeof baseTheme;
 
-export const lightTheme = merge(baseTheme, {
-    // colors: {
-    //     // text: '#222',
-    //     // primary: 'tomato',
+export const lightTheme: NiallTheme = merge(baseTheme, {
+    // fonts: {
+    //     body: 'sans-serif',
     // },
-    fonts: {
-        body: 'sans-serif',
-    },
 });
 
-export const darkTheme = {
-    // colours: {
-    //     neutral: neutralColourSet,
-    // },
-    // background: '#212121',
-};
+export const darkTheme: NiallTheme = merge(lightTheme, {
+    colors: {
+        primary: colourSets.tertiaryColourSet,
+    },
+});

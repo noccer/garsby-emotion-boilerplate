@@ -74,9 +74,9 @@ export const colourSets = {
 export const baseTheme = {
     colors: {
         // text: neutralColourSet.N800,
-        background: primaryColourSet.N100,
+        background: primaryColourSet.N800,
         // primary: primaryColourSet.primary,
-        primary: 'primaryColourSet.primary',
+        primary: `${primaryColourSet.primary}`,
         // secondary: secondaryColourSet.primary,
     },
     fonts: {
@@ -98,7 +98,7 @@ export const baseTheme = {
     buttons: {
         primary: {
             color: 'background',
-            bg: 'primary',
+            bg: `${primaryColourSet.N300}`,
             ':hover, :focus': {
                 bg: 'secondary',
             },

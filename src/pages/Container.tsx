@@ -11,8 +11,7 @@ export const Container: React.FunctionComponent<LayoutProps> = (props) => {
             <Global
                 styles={css`
                     body {
-                        font-family: sans-serif;
-                        // todo: include CSS reset here instead
+                        font-family: ${lightTheme && lightTheme.fonts && lightTheme.fonts.body};
                     }
                 `}
             />

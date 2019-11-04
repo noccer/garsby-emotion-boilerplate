@@ -3,7 +3,7 @@ import { jsx, InterpolationWithTheme } from '@emotion/core';
 
 import * as React from 'react';
 import { useTheme } from 'emotion-theming';
-import { StorybookTheme } from '../../utils/theme';
+import { NiallTheme } from '../../utils/theme';
 
 interface ButtonProps {
     onClick?: (event: any) => void;
@@ -15,13 +15,18 @@ interface ButtonProps {
  */
 
 const Button: React.FunctionComponent<ButtonProps> = ({ children, label, onClick }) => {
-    const theme = useTheme<StorybookTheme>();
+    const theme = useTheme<NiallTheme>();
 
-    // console.table(theme.colors);
-
-    const cssStyles: InterpolationWithTheme<StorybookTheme> = {
-        color: theme.colors.text,
-        backgroundColor: theme.colors.primary,
+    const cssStyles: InterpolationWithTheme<NiallTheme> = {
+        color: theme.colors.primary,
+        backgroundColor: theme.buttons.primary.bg,
+        borderRadius: '100px',
+        border: 'none',
+        padding: `${theme.lineHeights.body / 3}rem ${theme.lineHeights.body / 2}rem`,
+        ':focus': {
+            // outline: 'green', // TODO: use a context and detect 'userIsTabbing'
+            // https://medium.com/hackernoon/removing-that-ugly-focus-ring-and-keeping-it-too-6c8727fefcd2
+        },
     };
 
     return (
