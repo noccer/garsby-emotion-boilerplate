@@ -9,7 +9,7 @@ export const lightTheme: NiallTheme = merge(baseTheme, {
     // },
 });
 
-export const darkTheme: NiallTheme = merge(lightTheme, {
+export const darkTheme: NiallTheme = merge(baseTheme, {
     colors: {
         primary: colourSets.tertiaryColourSet,
     },

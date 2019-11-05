@@ -75,9 +75,9 @@ export const baseTheme = {
     colors: {
         // text: neutralColourSet.N800,
         background: primaryColourSet.N800,
-        // primary: primaryColourSet.primary,
         primary: `${primaryColourSet.primary}`,
-        // secondary: secondaryColourSet.primary,
+        secondary: `${secondaryColourSet.primary}`,
+        tertiary: `${tertiaryColourSet.primary}`,
     },
     fonts: {
         body: 'system-ui, sans-serif',
