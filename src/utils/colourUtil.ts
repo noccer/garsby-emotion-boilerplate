@@ -41,19 +41,18 @@ const generateColourSet = (hsl: HSL): ColourSet => {
 
 const primaryColour = '#DE0F19';
 const primary: HSL = tinycolor(primaryColour).toHsl();
+const primaryColourSet: ColourSet = generateColourSet(primary);
 
 const secondaryColour = '#B20C71';
 const secondary = tinycolor(secondaryColour).toHsl();
+const secondaryColourSet: ColourSet = generateColourSet(secondary);
 
 const tertiaryColour = '#E26B0F';
 const tertiary: HSL = tinycolor(tertiaryColour).toHsl();
+const tertiaryColourSet: ColourSet = generateColourSet(tertiary);
 
 const neutralColour = '#210101';
 const neutral: HSL = tinycolor(neutralColour).toHsl();
-
-const primaryColourSet: ColourSet = generateColourSet(primary);
-const secondaryColourSet: ColourSet = generateColourSet(secondary);
-const tertiaryColourSet: ColourSet = generateColourSet(tertiary);
 const neutralColourSet: ColourSet = generateColourSet(neutral);
 
 export const colourSets = {
