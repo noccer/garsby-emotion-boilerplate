@@ -3,18 +3,15 @@ import tinycolor from 'tinycolor2';
 export interface ColourSet {
     [key: string]: string;
 }
-
 interface HSL {
     h: number;
     s: number;
     l: number;
 }
-
 interface AlphaSet {
     name: string;
     alpha: number;
 }
-
 const alphaSets: AlphaSet[] = [
     { name: 'N900', alpha: 1 },
     { name: 'primary', alpha: 1 },
@@ -28,19 +25,15 @@ const alphaSets: AlphaSet[] = [
     { name: 'N100', alpha: 0.04 },
 ];
 
-const hslaGenerator = (params: { hsl: HSL; alpha: number }) => {
-    const { h: hue, s: saturation, l: lightness } = params.hsl;
-
-    return `hsla(${hue}, ${Math.floor(saturation * 100)}%, ${Math.floor(lightness * 100)}%, ${
-        params.alpha
-    })`;
+const hslaGenerator = ({ hsl: { h, s, l }, alpha }: { hsl: HSL; alpha: number }) => {
+    return `hsla(${h}, ${Math.floor(s * 100)}%, ${Math.floor(l * 100)}%, ${alpha})`;
 };
 
 const generateColourSet = (hsl: HSL): ColourSet => {
     const initialColourSet: ColourSet = {};
-    const colourSet: ColourSet = alphaSets.reduce((prev: ColourSet, set: AlphaSet) => {
-        const value = tinycolor(hslaGenerator({ hsl, alpha: set.alpha })).toRgbString();
-        prev[set.name] = value;
+    const colourSet: ColourSet = alphaSets.reduce((prev: ColourSet, { alpha, name }: AlphaSet) => {
+        const value = tinycolor(hslaGenerator({ hsl, alpha })).toRgbString();
+        prev[name] = value;
         return prev;
     }, initialColourSet);
     return colourSet;
@@ -68,54 +61,4 @@ export const colourSets = {
     secondaryColourSet,
     tertiaryColourSet,
     neutralColourSet,
-};
-
-// baseTheme forked from 'gatsby-theme-monolith/src/gatsby-plugin-theme-ui'
-export const baseTheme = {
-    colors: {
-        // text: neutralColourSet.N800,
-        background: primaryColourSet.N800,
-        primary: `${primaryColourSet.primary}`,
-        secondary: `${secondaryColourSet.primary}`,
-        tertiary: `${tertiaryColourSet.primary}`,
-    },
-    fonts: {
-        body: 'system-ui, sans-serif',
-        heading: 'system-ui, sans-serif',
-        monospace: 'Menlo, monospace',
-    },
-    fontWeights: {
-        body: 400,
-        heading: 700,
-        bold: 700,
-    },
-    lineHeights: {
-        body: 1.5,
-        heading: 1.125,
-    },
-    fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
-    space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-    buttons: {
-        primary: {
-            color: 'background',
-            bg: `${primaryColourSet.N300}`,
-            ':hover, :focus': {
-                bg: 'secondary',
-            },
-        },
-        secondary: {
-            color: 'background',
-            bg: 'secondary',
-            ':hover, :focus': {
-                bg: 'gray',
-            },
-        },
-        gray: {
-            color: 'background',
-            bg: 'gray',
-            ':hover, :focus': {
-                bg: 'secondary',
-            },
-        },
-    },
 };
